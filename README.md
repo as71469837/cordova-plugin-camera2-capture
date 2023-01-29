@@ -6,6 +6,10 @@ cordova-plugin-camera2-capture
 duration表示录制视频的最大时长，如果为0，则表示没有限制。
 ```
     camera2capture.init(400, 400, 10, (s: any) => {
+        ////以下代码可实现html界面显示在java界面上；
+        //const bodyEl: any = window.document.querySelector('body');
+        //bodyEl.style.visibility = 'hidden';
+        //bodyEl.style.background = 'transparent';
       console.log("Video2Capture init Success");
     }, (f: any) => {
       console.error("Video2Capture init Fail");
