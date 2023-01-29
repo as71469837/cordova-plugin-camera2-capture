@@ -1,0 +1,29 @@
+{
+  "name": "huayu.cordova.plugin.camera2capture",
+  "version": "1.0.0",
+  "description": "基于camera2的视频拍摄cordova插件，暂只支持Android",
+  "cordova": {
+    "id": "huayu.cordova.plugin.camera2capture",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "DaSheng",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/as71469837/cordova-plugin-camera2-capture.git"
+  },
+  "bugs": {
+    "url": "https://github.com/as71469837/cordova-plugin-camera2-capture/issues"
+  },
+  "homepage": "https://github.com/as71469837/cordova-plugin-camera2-capture#readme"
+}
