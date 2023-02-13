@@ -15,8 +15,6 @@ import android.widget.ImageView;
 
 import androidx.annotation.RequiresApi;
 
-import io.ionic.starter.R;
-
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Camera2CaptureFragment#newInstance} factory method to
@@ -24,15 +22,12 @@ import io.ionic.starter.R;
  */
 public class Camera2CaptureFragment extends Fragment {
 
-  // TODO: Rename parameter arguments, choose names that match
-  // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
   private static final String Key_Height = "Camera2ConfigOption.Height";
   private static final String Key_Width = "Camera2ConfigOption.Width";
   private static final String Key_Duration = "Camera2ConfigOption.Duration";
   public  static int Durantion=15;
   public  static Context mAppContext;
 
-  // TODO: Rename and change types of parameters
   private String mHeightKey;
   private String mWidthKey;
   private String mDurationKey;
@@ -61,7 +56,6 @@ public class Camera2CaptureFragment extends Fragment {
    * @param duration Parameter 2.
    * @return A new instance of fragment Camera2CaptureFragment.
    */
-  // TODO: Rename and change types and number of parameters
   public static Camera2CaptureFragment newInstance(int height, int width ,int duration) {
     Camera2CaptureFragment fragment = new Camera2CaptureFragment();
     Bundle args = new Bundle();
@@ -97,7 +91,9 @@ public class Camera2CaptureFragment extends Fragment {
                            Bundle savedInstanceState) {
     appResourcesPackage = getActivity().getPackageName();
     // Inflate the layout for this fragment
-    mPageView = inflater.inflate(R.layout.camera2_capture_fragment, container, false);
+    int pageViewId=getResources().getIdentifier("camera2_capture_activity","layout",appResourcesPackage);
+    mPageView = inflater.inflate(pageViewId, container, false);
+    // mPageView = inflater.inflate(R.layout.camera2_capture_fragment, container, false);
     mActivity = getActivity();
     if (mActivity != null) {
       mActivity.getWindow().setFlags(
@@ -107,7 +103,9 @@ public class Camera2CaptureFragment extends Fragment {
       mActivity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);//全屏，包含系统状态栏
     }
 
-    mTextureView = mPageView.findViewById(R.id.camera2_capture_container);
+    int textureViewId=getResources().getIdentifier("camera2_capture_container","id",appResourcesPackage);
+    mTextureView = mPageView.findViewById(textureViewId);
+    // mTextureView = mPageView.findViewById(R.id.camera2_capture_container);
     camera2VideoCaptureHelper = new Camera2VideoCaptureHelper(getActivity(), mTextureView, getResources().getDisplayMetrics(),mDuration);
     initBrightness();
     return mPageView;

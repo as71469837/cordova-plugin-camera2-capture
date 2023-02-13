@@ -4,13 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.TextureView;
 import android.view.WindowManager;
 import android.widget.ImageView;
-
-import io.ionic.starter.R;
 
 public class Camera2CaptureActivity extends Activity {
   public static Camera2VideoCaptureHelper camera2VideoCaptureHelper;
@@ -40,8 +37,13 @@ public class Camera2CaptureActivity extends Activity {
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);//保持常亮
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);//全屏，包含系统状态栏
 
-    setContentView(R.layout.camera2_capture_activity);
-    textureView = findViewById(R.id.camera2_capture_container);
+    int viewId=getResources().getIdentifier("camera2_capture_activity","layout",getPackageName());
+    setContentView(viewId);
+    // setContentView(R.layout.camera2_capture_activity);
+
+    int viewContentId=getResources().getIdentifier("camera2_capture_container","id",getPackageName());
+    textureView = findViewById(viewContentId);
+    // textureView = findViewById(R.id.camera2_capture_container);
     camera2VideoCaptureHelper = new Camera2VideoCaptureHelper(this, textureView,getResources().getDisplayMetrics());
 
     initBrightness();
